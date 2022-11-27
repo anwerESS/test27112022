@@ -4,6 +4,7 @@
 
 int main()
 {
-	printf("HELLO FROM JENKINS");
+	// print msg
+	printf("HELLO FROM JENKINS =)");
 	return 0;
 }
