@@ -5,6 +5,6 @@
 int main()
 {
 	// print msg
-	printf("HELLO FROM JENKINS TRIGGER 33...");
+	printf("HELLO FROM JENKINS TRIGGER 44...");
 	return 0;
 }
