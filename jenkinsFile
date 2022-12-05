@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('cloning') {
+            steps {
+                echo 'Building..'
+                sh 'mkdir -p $JENKINS_HOME/tmp/hello_001'
+                sh 'rm -rf $JENKINS_HOME/tmp/hello_001/*'
+                sh 'cd $JENKINS_HOME/tmp/hello_001'
+                sh 'git clone https://github.com/anwerESS/test27112022.git'
+            }
+        }
+        stage('building') {
+            steps {
+                echo 'building..'
+                sh 'cd $JENKINS_HOME/tmp/hello_001/test27112022'
+                sh 'gcc *.c -o hello_001_out'
+            }
+        }
+        stage('running') {
+            steps {
+                echo 'running....'
+                sh 'cd $JENKINS_HOME/tmp/hello_001/test27112022'
+                sh './hello_001_out'
+            }
+        }
+    }
+}
